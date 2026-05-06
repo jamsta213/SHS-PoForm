@@ -162,8 +162,8 @@
     showLoading('Loading form data…');
     try {
       const res = await fetch('/.netlify/functions/getFormData');
-      if (!res.ok) throw new Error('Network response was not ok');
       const data = await res.json();
+      if (!res.ok) throw new Error(data.error || `Server error ${res.status}`);
       const bSel = document.getElementById('budgetSelect');
       const sSel = document.getElementById('supplierSelect');
       data.budgets.forEach(b => bSel.add(new Option(b, b)));
