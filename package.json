@@ -1,0 +1,8 @@
+{
+  "name": "po-form-netlify",
+  "version": "1.0.0",
+  "description": "Purchase Order Form – Netlify deployment",
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
