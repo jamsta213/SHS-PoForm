@@ -1,13 +1,4 @@
-[build]
-  publish = "."
-  functions = "netlify/functions"
-  command = "npm install"
+# netlify.toml
 
 [functions]
-  node_bundler = "nft"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "ALLOWALL"
-    X-Content-Type-Options = "nosniff"
+  directory = "netlify/functions"

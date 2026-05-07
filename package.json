@@ -1,7 +1,7 @@
 {
-  "name": "po-form-netlify",
+  "name": "po-form",
   "version": "1.0.0",
-  "description": "Purchase Order Form – Netlify deployment",
+  "description": "Purchase Order form hosted on Netlify with Google Sheets backend",
   "dependencies": {
     "googleapis": "^144.0.0"
   }
