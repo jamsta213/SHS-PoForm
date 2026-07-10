@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Purchase Order Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <img src="https://drive.google.com/thumbnail?id=12KWoJLRUDRozds2VcJM_WXwbz80fGeV3&sz=w1000" class="logo-header">
+
+  <form id="poForm" onsubmit="return false;">
+
+    <div id="step-details" class="form-step active">
+      <h1>Purchase Order Form</h1>
+      <div class="field">
+        <label>Name</label>
+        <input type="text" id="userName" required>
+      </div>
+      <div class="field">
+        <label>Budget</label>
+        <select id="budgetSelect" required><option value="">Select Budget</option></select>
+      </div>
+      <div class="field">
+        <label>Supplier</label>
+        <select id="supplierSelect" onchange="toggleOtherSupplier(this)" required>
+          <option value="">Select Supplier</option>
+        </select>
+        <input type="text" id="otherSupplierText" class="other-input" placeholder="Enter supplier name">
+      </div>
+      <button type="button" class="btn-next" onclick="validatePage1()">Next Step</button>
+    </div>
+
+    <div id="item-steps-container"></div>
+
+    <div id="step-confirm" class="form-step">
+      <h1>Confirmation</h1>
+      <div id="previewArea" class="summary-box"></div>
+      <div class="field">
+        <label>Order Description</label>
+        <span class="desc">Please give your order a name - this will make it easier for you to manage your orders. Eg - "History week books"</span>
+        <input type="text" id="orderDesc" required>
+      </div>
+      <div class="field">
+        <label>Any other comments</label>
+        <input type="text" id="comments">
+      </div>
+      <button type="button" class="btn-submit" id="submitBtn" onclick="submitForm()">Submit Request</button>
+      <button type="button" class="btn-back" onclick="prevStep()">Back</button>
+    </div>
+
+    <div id="step-success" class="form-step">
+      <div id="success-icon"> ✓ </div>
+      <h1>Request Submitted</h1>
+      <p style="font-weight: 700; color: #444; margin-bottom: 30px;">Your purchase order has been successfully recorded.</p>
+      <button type="button" class="btn-next" onclick="location.reload()">Submit Another</button>
+    </div>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
